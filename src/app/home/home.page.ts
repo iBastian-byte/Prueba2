@@ -15,17 +15,17 @@ export default class HomePage implements OnInit{
   ) {}
 
   ngOnInit(){
-    //Se obtiene los productos del localstorage con la llave 'Object'
+    //Se obtiene los productos del localstorage
     const Object = localStorage.getItem('Object');
     if(Object  !!=null){
       this.items = JSON.parse(Object);
-      console.log('Obtiene productos desde el LocalStorage')
+      console.log
     }else{
     this.APIService.obtenerInfo().subscribe((Object)=>{
-      console.log('Obtienenlosproductos desde la API')
+      console.log
       this.items = Object;
-      //Se aLmacena en el localstorage con la llave 'productos'
-      localStorage.setItem('productos',JSON.stringify(this.items));
+      //Almacenamos en el LocalStorage
+      localStorage.setItem('Object',JSON.stringify(this.items));
     });
   }
 }}
